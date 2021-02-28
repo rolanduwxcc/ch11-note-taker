@@ -19,6 +19,17 @@
       "title": "A",
       "text": "dddd",
       "id": 4
+    },
+    {
+      "title": "Note number 5",
+      "text": "aldfja;lsdfj;alsdfj;aldjfalkdsf",
+      "id": 5
+    },
+    {
+      "title": "Note number 6",
+      "text": ";ldkfja;ldfjaldfjlkadjf",
+      "id": 6
     }
-  ]
+  ],
+  "idLastUsed": 6
 }
