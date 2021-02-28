@@ -1,0 +1,19 @@
+{
+    "notes": [
+        {
+            "title": "Test Title",
+            "text": "Test text",
+            "id": 1
+        },
+        {
+            "title": "first JSON note",
+            "text": "lorem ipsum signus aparate hold puppers!",
+            "id": 2
+        },
+        {
+            "title": "The Shinning",
+            "text": "lorem ipsum signus  aparate hold puppers! Corvalis!",
+            "id": 3
+        }
+    ]
+}
