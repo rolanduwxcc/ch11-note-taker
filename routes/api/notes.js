@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
     };
 
     if (!newNote.title || !newNote.title) {
-        return res.status(400).json({ msg: `Please include a title and text!`});
+        return res.status(400).json({ msg: `Please include BOTH a title and text!`});
     }
 
     notes.push(newNote);
@@ -74,9 +74,20 @@ router.put('/:id', (req, res) => {
 //------------------------------------------DELETE ROUTES
 router.delete('/:id', (req, res) => {
     const found = notes.some(note => note.id === parseInt(req.params.id));
-
+    console.log('smack the route',found);
     if (found) {
-        res.json({ msg: 'Note deleted', notes: notes.filter(note => note.id !== parseInt(req.params.id))});
+        res.json
+        fs.writeFileSync(
+            path.join(__dirname, '../../db/db.json'),
+            JSON.stringify({ notes: notes.filter(note => note.id !== parseInt(req.params.id)), idLastUsed: idLastUsed}, null, 2)
+        );
+        console.table(notes);
+        // res.json(notes);
+        res.status(200).json({msg: `Note deleted!`});
+        // res.json({ 
+        //     msg: 'Note deleted', 
+        //     notes: notes.filter(note => note.id !== parseInt(req.params.id))
+        // });
 
     } else {
         //bad request
