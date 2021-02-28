@@ -1,15 +1,25 @@
 {
   "notes": [
     {
-      "title": "Note number 1",
+      "title": "Starter note 1",
       "text": "I love notes",
-      "id": 10
+      "id": 1
     },
     {
       "title": "Note number 2",
       "text": "I love notes",
-      "id": 1
+      "id": 2
+    },
+    {
+      "title": "Note number 3",
+      "text": "I love notes",
+      "id": 3
+    },
+    {
+      "title": "Note number 4",
+      "text": "I love notes",
+      "id": 4
     }
   ],
-  "idLastUsed": 33
+  "idLastUsed": 4
 }
