@@ -3,6 +3,8 @@ const express = require('express');  //express.js
 const fs = require('fs');   //file system module
 const path = require('path')   //path module
 const logger = require('./middleware/logger'); 
+const apiRoutes = require('./routes/api/notes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 
 //-----------------------------------------------VARIABLES
@@ -18,7 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
 
 //----moved the main routes to own folder
-app.use('/api/notes', require('./routes/api/notes.js'));
+app.use('/api/notes', apiRoutes);
+app.use('/', htmlRoutes);
 
 app.use(logger);
 

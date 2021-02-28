@@ -1,5 +1,7 @@
 const express = require('express');
-const uuid = require('uuid');
+const fs = require('fs');
+const path = require('path');
+// const { fstat } = require('fs');
 const router = express.Router();
 const { notes } = require('../../db/db.json'); 
 let { idLastUsed } = require('../../db/db.json');
@@ -26,12 +28,11 @@ router.get('/:id', (req, res) => {
 //-----------------------------------------CREATION ROUTES
 router.post('/', (req, res) => {
     // res.send(req.body);
-    console.log(notes);
+    // console.log(notes);
     const newNote = {
         title: req.body.title,
         text: req.body.text,
         id: idLastUsed+1,
-        // id: uuid.v4(),
     };
 
     if (!newNote.title || !newNote.title) {
@@ -41,6 +42,11 @@ router.post('/', (req, res) => {
     notes.push(newNote);
     console.log(`idLastUsed = ${idLastUsed} || and newNote.id = ${newNote.id}`);
     idLastUsed = newNote.id;
+
+    fs.writeFileSync(
+        path.join(__dirname, '../../db/db.json'),
+        JSON.stringify({ notes: notes}, null, 2)
+    );
 
     res.json(notes);
 });

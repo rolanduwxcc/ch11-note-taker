@@ -1,20 +1,24 @@
 {
-    "notes": [
-        {
-            "title": "Test Title",
-            "text": "Test text",
-            "id": 1
-        },
-        {
-            "title": "first JSON note",
-            "text": "lorem ipsum signus aparate hold puppers!",
-            "id": 2
-        },
-        {
-            "title": "The Shinning",
-            "text": "lorem ipsum signus  aparate hold puppers! Corvalis!",
-            "id": 3
-        }
-    ],
-    "idLastUsed": 3
+  "notes": [
+    {
+      "title": "Test Title",
+      "text": "Test text",
+      "id": 1
+    },
+    {
+      "title": "first JSON note",
+      "text": "lorem ipsum signus aparate hold puppers!",
+      "id": 2
+    },
+    {
+      "title": "The Shinning",
+      "text": "lorem ipsum signus  aparate hold puppers! Corvalis!",
+      "id": 3
+    },
+    {
+      "title": "A",
+      "text": "dddd",
+      "id": 4
+    }
+  ]
 }
