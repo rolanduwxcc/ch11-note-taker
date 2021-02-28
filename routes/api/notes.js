@@ -2,7 +2,7 @@ const express = require('express');
 const uuid = require('uuid');
 const router = express.Router();
 const { notes } = require('../../db/db.json'); 
-
+let { idLastUsed } = require('../../db/db.json');
 
 //----since moving route here and defining route in server
 //----dont need '/api/notes' just '/' instead the former
@@ -26,10 +26,12 @@ router.get('/:id', (req, res) => {
 //-----------------------------------------CREATION ROUTES
 router.post('/', (req, res) => {
     // res.send(req.body);
+    console.log(notes);
     const newNote = {
         title: req.body.title,
         text: req.body.text,
-        id: uuid.v4(),
+        id: idLastUsed+1,
+        // id: uuid.v4(),
     };
 
     if (!newNote.title || !newNote.title) {
@@ -37,6 +39,9 @@ router.post('/', (req, res) => {
     }
 
     notes.push(newNote);
+    console.log(`idLastUsed = ${idLastUsed} || and newNote.id = ${newNote.id}`);
+    idLastUsed = newNote.id;
+
     res.json(notes);
 });
 
