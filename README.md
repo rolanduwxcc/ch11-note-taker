@@ -4,7 +4,7 @@
 #### Table of Contents  
 [Description](#description)<br>
 [Installation Instructions](#installation-instructions)<br>
-[Built with](#built-with)<br>
+[Built with](#built-with-these-tools)<br>
 [Contributions](#contributions--contact-info)<br>
 [Screenshots/Test](#screenshots)<br>
 [License & Copyrights](#license--copyrights)<br>
@@ -17,7 +17,7 @@
 * Visit --> [Note Taker](https://tranquil-plateau-13378.herokuapp.com/)
 * Or download repo to run locally with node
 
-## Built with and Tools used
+## Built with These Tools
 * HTML (JavaScript generated)
 * CSS
 * FontAwesome
