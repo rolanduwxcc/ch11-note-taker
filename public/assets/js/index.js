@@ -85,6 +85,15 @@ const handleNoteDelete = (e) => {
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute("data-note")).id;
 
+  console.log(`
+    ___________________________
+    Inside the delete handler!
+    Note: ${noteId}
+    ${console.table(note)}
+    ---------------------------
+  `);
+  
+
   if (activeNote.id === noteId) {
     activeNote = {};
   }
@@ -93,6 +102,7 @@ const handleNoteDelete = (e) => {
     // console.log(noteId);
         getAndRenderNotes();
         renderActiveNote();
+        console.log(`Deleted node with id ${noteId}!`)
   });
 };
 

@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 // const { fstat } = require('fs');
 const router = express.Router();
-const { notes: notesArray } = require('../../db/db.json'); 
+let { notes: notesArray } = require('../../db/db.json'); 
 let { idLastUsed } = require('../../db/db.json');
 
 //----since moving route here and defining route in server
@@ -75,9 +75,9 @@ router.put('/:id', (req, res) => {
 //------------------------------------------DELETE ROUTES
 router.delete('/:id', (req, res) => {
     const found = notesArray.some(note => note.id === parseInt(req.params.id));
-    console.log('smack the route',found);
-    console.log(notesArray);
-    console.log(idLastUsed);
+    // console.log('smack the route',found);
+    // console.log(notesArray);
+    // console.log(idLastUsed);
 
     if (found) {
 
@@ -88,9 +88,11 @@ router.delete('/:id', (req, res) => {
             path.join(__dirname, '../../db/db.json'),
             JSON.stringify({notes: newNotesList, idLastUsed: idLastUsed}, null, 2)
         );
-        console.table(newNotesList);
-        res.json(newNotesList);
-        // res.status(200).json({msg: `Note deleted!`});
+        notesArray = newNotesList;
+        // console.table(newNotesList);
+
+        res.status(200).json(notesArray);
+        
         // res.json({ 
         //     msg: 'Note deleted', 
         //     notes: notes.filter(note => note.id !== parseInt(req.params.id))
