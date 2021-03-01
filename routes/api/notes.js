@@ -75,9 +75,6 @@ router.put('/:id', (req, res) => {
 //------------------------------------------DELETE ROUTES
 router.delete('/:id', (req, res) => {
     const found = notesArray.some(note => note.id === parseInt(req.params.id));
-    // console.log('smack the route',found);
-    // console.log(notesArray);
-    // console.log(idLastUsed);
 
     if (found) {
 
@@ -92,11 +89,6 @@ router.delete('/:id', (req, res) => {
         // console.table(newNotesList);
 
         res.status(200).json(notesArray);
-        
-        // res.json({ 
-        //     msg: 'Note deleted', 
-        //     notes: notes.filter(note => note.id !== parseInt(req.params.id))
-        // });
 
     } else {
         //bad request
